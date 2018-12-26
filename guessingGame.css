@@ -1,0 +1,60 @@
+body
+{
+    background-color: #232323;
+    margin: 0;
+}
+
+.square
+{
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 10%;
+}
+
+#container
+{
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1{
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    
+}
+
+#colorDisplay
+{
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+span
+{
+    color: white;
+}
+
+#top
+{
+    text-align: center;
+    color: white;
+    background-color: blue;
+    padding: 50px;
+    font-family: Calibri;
+}
+
+#middle
+{
+    text-align: center;
+    background-color: white;
+    height: 30px;
+}
+
+#message
+{
+    color: black;
+}
