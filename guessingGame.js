@@ -19,8 +19,47 @@ var colors = generateRandomColors(6);
 // ]
 
 var numberOfSquares = 6;
-
 var pickedColor = colors[Math.floor(Math.random() * (numberOfSquares))];
+
+document.querySelector("#hardBtn").addEventListener("click",function()
+{
+    numberOfSquares = 6;
+    document.querySelector("#hardBtn").classList.add("selected");
+    document.querySelector("#easyBtn").classList.remove("selected");
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = colors[Math.floor(Math.random() * (numberOfSquares))];
+    document.querySelector("#colorDisplay").textContent = pickedColor;
+    for(var i = 0 ; i < document.querySelectorAll(".square").length ; i++)
+    {
+        document.querySelectorAll(".square")[i].style.backgroundColor = colors[i];
+        document.querySelectorAll(".square")[i].style.display = "block";
+    }
+    document.querySelector("#message").textContent = "";
+    document.querySelector("#top").style.backgroundColor = "steelblue";
+});
+
+document.querySelector("#easyBtn").addEventListener("click",function()
+{
+    numberOfSquares = 3;
+    document.querySelector("#easyBtn").classList.add("selected");
+    document.querySelector("#hardBtn").classList.remove("selected");
+    colors = generateRandomColors(numberOfSquares);
+    pickedColor = colors[Math.floor(Math.random() * (numberOfSquares))];
+    document.querySelector("#colorDisplay").textContent = pickedColor;
+    for(var i = 0 ; i < document.querySelectorAll(".square").length ; i++)
+    {
+        if(colors[i])
+        {
+            document.querySelectorAll(".square")[i].style.backgroundColor = colors[i];
+        }
+        else
+        {
+            document.querySelectorAll(".square")[i].style.display = "none";
+        }
+    }
+    document.querySelector("#message").textContent = "";
+    document.querySelector("#top").style.backgroundColor = "steelblue";
+});
 
 document.querySelector("#colorDisplay").textContent = pickedColor;
 document.querySelector("#reset").addEventListener("click", reset);
@@ -74,13 +113,13 @@ function generateRandomColors(numberOfColors)
 
 function reset()
 {
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numberOfSquares);
     
     pickedColor = colors[Math.floor(Math.random() * (numberOfSquares))];
 
     document.querySelector("#colorDisplay").textContent = pickedColor;
 
-    document.querySelector("#top").style.backgroundColor = "blue";
+    document.querySelector("#top").style.backgroundColor = "steelblue";
 
     for(var i = 0 ; i < numberOfSquares ; i++)
     {
@@ -88,4 +127,5 @@ function reset()
         document.querySelectorAll(".square")[i].addEventListener("click",checkIfWinner);
     }
     document.querySelector("#reset").textContent = "New Colors";
+    document.querySelector("#message").textContent = "";
 }

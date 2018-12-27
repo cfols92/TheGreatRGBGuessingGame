@@ -12,19 +12,24 @@ body
     float: left;
     margin: 1.66%;
     border-radius: 10%;
+    transition: background 0.6s;
+    -webkit-trasition: background 0.6s;
+    -moz-trasition: background 0.6s;
+
 }
 
 #container
 {
     width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 h1{
     color: white;
     margin: 0;
     text-transform: uppercase;
-    
+    font-weight: 100;
+    line-height: 1.1;
 }
 
 #colorDisplay
@@ -42,9 +47,9 @@ span
 {
     text-align: center;
     color: white;
-    background-color: blue;
-    padding: 50px;
-    font-family: Calibri;
+    background-color: steelblue;
+    padding: 20px 0;
+    font-family: Avenir;
 }
 
 #middle
@@ -57,4 +62,34 @@ span
 #message
 {
     color: black;
+    display: inline-block;
+    width: 20%;
+}
+
+.selected
+{
+    background: steelblue;
+    color: white;
+}
+
+button
+{
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.3s;
+    -webkit-trasition: all 0.3s;
+    -moz-trasition: all 0.3s;
+    outline: none;
+}
+
+button:hover
+{
+    background: steelblue;
+    color: white;
 }
